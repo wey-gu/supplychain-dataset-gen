@@ -18,7 +18,7 @@ It come with 4 `TAGS` and 3 `EDGE TYPES`, and it looks like this:
 
 <p align="center">
   <a href="https://www.siwei.io/demo-dumps/adhoc-graphs/nebulagraph_export_supply_chain.html">
-    <img width="550" alt="graph_supply_chain" src="https://github.com/wey-gu/supplychain-dataset-gen/assets/1651790/cfde7667-724e-4804-aa2d-85130870a257">
+    <img width="550" alt="graph_supply_chain" src="https://github.com/wey-gu/supplychain-dataset-gen/assets/1651790/73d88e8f-ad20-4657-8323-97ec38f4b667">
   </a>
   <br>
   <small>
