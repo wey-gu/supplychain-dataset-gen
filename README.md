@@ -76,14 +76,44 @@ CREATE EDGE IF NOT EXISTS is_supplied_by(version string);
 
 Remove `--network=nebula-net` and modify the graphd address in `importer_v4_config.yaml` if you are not running NebulaGraph with docker-compose in same host.
 
+### With NebulaGraph Importer v4
+
 ```
 docker run --rm -ti \
     --network=nebula-net \
     -v ${PWD}/data_sample:/root \
-    -v ${PWD}:/root/config \
+    -v ${PWD}/importer_v4_config.yaml:/root/importer_v4_config.yaml \
     vesoft/nebula-importer:v4.0.0 \
-    --config /root/config/importer_v4_config.yaml
+    --config /root/importer_v4_config.yaml
 ```
+
+Result will be like:
+
+```log
+{"level":"info","ts":"2023-09-07T08:57:01Z","caller":"manager/manager.go:416","msg":"0s 0s 100.00%(3.1 KiB/3.1 KiB) Records{Finished: 129, Failed: 0, Rate: 3397.47/s}, Requests{Finished: 7, Failed: 0, Latency: 3.069285ms/4.945996ms, Rate: 184.36/s}, Processed{Finished: 129, Failed: 0, Rate: 3397.47/s}"}
+```
+
+### Get Stats
+
+```sql
+SUBMIT JOB STATS;
+SHOW STATS;
+```
+
+Result will be like:
+
+| Type  | Name           | Count |
+| :---- | :------------- | :---- |
+| Tag   | car_model      | 10    |
+| Tag   | feature        | 10    |
+| Tag   | part           | 10    |
+| Tag   | supplier       | 10    |
+| Edge  | is_composed_of | 14    |
+| Edge  | is_supplied_by | 10    |
+| Edge  | with_feature   | 38    |
+| Space | vertices       | 40    |
+| Space | edges          | 62    |
+
 
 ## Credits
 
