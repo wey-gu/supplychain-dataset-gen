@@ -1,0 +1,240 @@
+client:
+    version: v3
+    address: graphd:9669
+    user: root
+    password: nebula
+    concurrencyPerAddress: 10
+    retry: 3
+manager:
+    spaceName: auto_manufacturing_supply_chain
+    batch: 128
+    readerConcurrency: 50
+    importerConcurrency: 512
+sources:
+    - path: nodes_supplier.csv
+      csv:
+        delimiter: ','
+        withHeader: true
+      tags:
+        - name: supplier
+          id:
+            type: string
+            index: 0
+            function: null
+          props:
+            - name: name
+              type: string
+              index: 1
+              nullable: false
+              nullValue: ""
+              defaultValue: null
+            - name: address
+              type: string
+              index: 2
+              nullable: false
+              nullValue: ""
+              defaultValue: null
+            - name: contact
+              type: string
+              index: 3
+              nullable: false
+              nullValue: ""
+              defaultValue: null
+            - name: phone_number
+              type: string
+              index: 4
+              nullable: false
+              nullValue: ""
+              defaultValue: null
+    - path: nodes_part.csv
+      csv:
+        delimiter: ','
+        withHeader: true
+      tags:
+        - name: part
+          id:
+            type: string
+            index: 0
+            function: null
+          props:
+            - name: name
+              type: string
+              index: 1
+              nullable: false
+              nullValue: ""
+              defaultValue: null
+            - name: number
+              type: string
+              index: 2
+              nullable: false
+              nullValue: ""
+              defaultValue: null
+            - name: price
+              type: double
+              index: 3
+              nullable: false
+              nullValue: ""
+              defaultValue: null
+            - name: date
+              type: string
+              index: 4
+              nullable: false
+              nullValue: ""
+              defaultValue: null
+    - path: nodes_feature.csv
+      csv:
+        delimiter: ','
+        withHeader: true
+      tags:
+        - name: feature
+          id:
+            type: string
+            index: 0
+            function: null
+          props:
+            - name: name
+              type: string
+              index: 1
+              nullable: false
+              nullValue: ""
+              defaultValue: null
+            - name: number
+              type: string
+              index: 2
+              nullable: false
+              nullValue: ""
+              defaultValue: null
+            - name: type
+              type: string
+              index: 3
+              nullable: false
+              nullValue: ""
+              defaultValue: null
+            - name: state
+              type: string
+              index: 4
+              nullable: false
+              nullValue: ""
+              defaultValue: null
+    - path: nodes_car_model.csv
+      csv:
+        delimiter: ','
+        withHeader: true
+      tags:
+        - name: car_model
+          id:
+            type: string
+            index: 0
+            function: null
+          props:
+            - name: name
+              type: string
+              index: 1
+              nullable: false
+              nullValue: ""
+              defaultValue: null
+            - name: number
+              type: string
+              index: 2
+              nullable: false
+              nullValue: ""
+              defaultValue: null
+            - name: year
+              type: int
+              index: 3
+              nullable: false
+              nullValue: ""
+              defaultValue: null
+            - name: type
+              type: string
+              index: 4
+              nullable: false
+              nullValue: ""
+              defaultValue: null
+            - name: engine_type
+              type: string
+              index: 5
+              nullable: false
+              nullValue: ""
+              defaultValue: null
+            - name: size
+              type: string
+              index: 6
+              nullable: false
+              nullValue: ""
+              defaultValue: null
+            - name: seats
+              type: int
+              index: 7
+              nullable: false
+              nullValue: ""
+              defaultValue: null
+    - path: is_supplied_by.csv
+      csv:
+        delimiter: ','
+        withHeader: true
+      edges:
+        - name: is_supplied_by
+          src:
+            id:
+                type: string
+                index: 0
+                function: null
+          dst:
+            id:
+                type: string
+                index: 1
+                function: null
+          props:
+            - name: version
+              type: string
+              index: 2
+              nullable: false
+              nullValue: ""
+              defaultValue: null
+    - path: is_composed_of.csv
+      csv:
+        delimiter: ','
+        withHeader: true
+      edges:
+        - name: is_composed_of
+          src:
+            id:
+                type: string
+                index: 0
+                function: null
+          dst:
+            id:
+                type: string
+                index: 1
+                function: null
+          props:
+            - name: version
+              type: string
+              index: 2
+              nullable: false
+              nullValue: ""
+              defaultValue: null
+    - path: with_feature.csv
+      csv:
+        delimiter: ','
+        withHeader: true
+      edges:
+        - name: with_feature
+          src:
+            id:
+                type: string
+                index: 0
+                function: null
+          dst:
+            id:
+                type: string
+                index: 1
+                function: null
+          props:
+            - name: version
+              type: string
+              index: 2
+              nullable: false
+              nullValue: ""
+              defaultValue: null
