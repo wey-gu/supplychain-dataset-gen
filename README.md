@@ -71,3 +71,9 @@ CREATE EDGE IF NOT EXISTS with_feature(version string);
 CREATE EDGE IF NOT EXISTS is_composed_of(version string);
 CREATE EDGE IF NOT EXISTS is_supplied_by(version string);
 ```
+
+## Credits
+
+The idea of this dataset comes from Julia XIAO, the Customer Success Engineer of NebulaGraph.
+
+Due to I don't have bandwidth to prepare the datagen this time, I instead tried to ask ChatGPT-4 to help generate a small sample data first. See [here](https://chat.openai.com/share/10413cc3-8d4a-4795-88a2-3d231e4cfd9c) for the chat log.
