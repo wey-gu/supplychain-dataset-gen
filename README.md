@@ -1,3 +1,17 @@
+<!-- TOC start (generated with https://github.com/derlin/bitdowntoc) -->
+
+- [Graph Schema](#graph-schema)
+  * [Structure](#structure)
+  * [Properties](#properties)
+- [DDL](#ddl)
+- [Data Ingest](#data-ingest)
+  * [With NebulaGraph Importer v4](#with-nebulagraph-importer-v4)
+  * [Get Stats](#get-stats)
+- [Credits](#credits)
+
+<!-- TOC end -->
+
+<!-- TOC --><a name="graph-schema"></a>
 ## Graph Schema
 
 It come with 4 TAGS and 3 EDGE TYPES, and it looks like this:
@@ -17,6 +31,7 @@ It come with 4 TAGS and 3 EDGE TYPES, and it looks like this:
 
 Let's see its details.
 
+<!-- TOC --><a name="structure"></a>
 ### Structure
 
 ```mermaid
@@ -36,6 +51,7 @@ graph TD
     style D fill:#ccf,stroke:#333,stroke-width:2px;
 ```
 
+<!-- TOC --><a name="properties"></a>
 ### Properties
 
 ```mermaid
@@ -73,6 +89,7 @@ classDiagram
     part --> supplier : is_supplied_by
 ```
 
+<!-- TOC --><a name="ddl"></a>
 ## DDL
 
 ```sql
@@ -88,10 +105,12 @@ CREATE EDGE IF NOT EXISTS is_composed_of(version string);
 CREATE EDGE IF NOT EXISTS is_supplied_by(version string);
 ```
 
+<!-- TOC --><a name="data-ingest"></a>
 ## Data Ingest
 
 Remove `--network=nebula-net` and modify the graphd address in `importer_v4_config.yaml` if you are not running NebulaGraph with docker-compose in same host.
 
+<!-- TOC --><a name="with-nebulagraph-importer-v4"></a>
 ### With NebulaGraph Importer v4
 
 ```
@@ -109,6 +128,7 @@ Result will be like:
 {"level":"info","ts":"2023-09-07T08:57:01Z","caller":"manager/manager.go:416","msg":"0s 0s 100.00%(3.1 KiB/3.1 KiB) Records{Finished: 129, Failed: 0, Rate: 3397.47/s}, Requests{Finished: 7, Failed: 0, Latency: 3.069285ms/4.945996ms, Rate: 184.36/s}, Processed{Finished: 129, Failed: 0, Rate: 3397.47/s}"}
 ```
 
+<!-- TOC --><a name="get-stats"></a>
 ### Get Stats
 
 ```sql
@@ -131,6 +151,7 @@ Result will be like:
 | Space | edges          | 62    |
 
 
+<!-- TOC --><a name="credits"></a>
 ## Credits
 
 The idea of this dataset comes from Julia XIAO, the Customer Success Engineer of NebulaGraph.
