@@ -3,9 +3,16 @@
 It come with 4 TAGS and 3 EDGE TYPES, and it looks like this:
 
 <p align="center">
-  <img width="500" alt="graph_supply_chain" src="https://github.com/wey-gu/supplychain-dataset-gen/assets/1651790/82b17c8f-8b43-4e81-a495-598ba99e324d">
+  <a href="https://www.siwei.io/demo-dumps/adhoc-graphs/nebulagraph_export_supply_chain.html">
+    <img width="550" alt="graph_supply_chain" src="https://github.com/wey-gu/supplychain-dataset-gen/assets/1651790/82b17c8f-8b43-4e81-a495-598ba99e324d">
+  </a>
   <br>
-  <small><i>Graph: Auto manufacturing supply chain</i>, <a href="https://www.siwei.io/demo-dumps/adhoc-graphs/nebulagraph_export_supply_chain.html">renderred graph</a></small>
+  <small>
+    <i>Graph: Auto manufacturing supply chain</i>,
+    <a href="https://www.siwei.io/demo-dumps/adhoc-graphs/nebulagraph_export_supply_chain.html">
+      renderred graph
+    </a>
+  </small>
 </p>
 
 Let's see its details.
