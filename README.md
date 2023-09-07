@@ -1,5 +1,10 @@
+## Graph Schema
 
-## Schema
+It come with 4 TAGS and 3 EDGE TYPES, and it looks like this:
+
+<img width="600" alt="graph_supply_chain (1)" src="https://github.com/wey-gu/supplychain-dataset-gen/assets/1651790/82b17c8f-8b43-4e81-a495-598ba99e324d">
+
+Let's see its details.
 
 ### Structure
 
