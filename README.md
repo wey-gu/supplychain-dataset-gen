@@ -42,7 +42,7 @@ graph TD
     D[supplier]
 
     A -->|with_feature| B
-    A -->|is_composed_of| C
+    B -->|is_composed_of| C
     C -->|is_supplied_by| D
 
     style A fill:#f9d,stroke:#333,stroke-width:2px;
@@ -85,7 +85,7 @@ classDiagram
     }
 
     car_model --> feature : with_feature
-    car_model --> part : is_composed_of
+    feature --> part : is_composed_of
     part --> supplier : is_supplied_by
 ```
 
