@@ -12,6 +12,9 @@
 <!-- TOC end -->
 
 <!-- TOC --><a name="graph-schema"></a>
+
+https://github.com/wey-gu/supplychain-dataset-gen/assets/1651790/efb9d71a-4ed6-4272-a976-d4f922cf829a
+
 ## Graph Schema
 
 It come with 4 `TAGS` and 3 `EDGE TYPES`, and it looks like this:
